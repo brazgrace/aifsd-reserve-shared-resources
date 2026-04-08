@@ -7,6 +7,7 @@ name = "reserve-service"
 version = "0.1.0"
 description = "REST API for shared resource (meeting room) reservations"
 authors = ["brazgrace"]
+readme = "README.md"
 packages = [{ include = "reserve_service", from = "src" }]
 
 [tool.poetry.dependencies]
