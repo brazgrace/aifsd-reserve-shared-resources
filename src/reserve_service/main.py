@@ -24,15 +24,7 @@ def get_repository() -> InMemoryReservationRepository:
     return _repository
 
 
-@app.post(
-    "/book/{resource_id}",
-    response_model=BookedResponse,
-    status_code=201,
-    responses={
-        404: {"model": None, "description": "Unknown resource"},
-        409: {"model": None, "description": "Overlapping reservation"},
-    },
-)
+@app.post("/book/{resource_id}", response_model=BookedResponse, status_code=201)
 async def book_resource(
     resource_id: str,
     body: BookRequest,
